@@ -1,4 +1,5 @@
 #include "WiFiS3.h"
+#include "ArduinoHttpClient.h"
 #include "Modulino.h"
 #include "secrets.h"
 
@@ -6,10 +7,12 @@ const long INTERVAL = 1000 * 30; // 30 seconds
 
 char ssid[] = SECRET_SSID;
 char password[] = SECRET_PW;
+char serverAddress[] = SERVER_ADDR;
 int port = 8080;
 int led = LED_BUILTIN;
 
 WiFiClient wifi;
+HttpClient client = HttpClient(wifi, serverAddress, port);
 ModulinoThermo thermo;
 
 void setup() {
@@ -34,5 +37,13 @@ void loop() {
   Serial.print("Current room temperature: ");
   Serial.println(temperature);
 
+  postData(temperature);
+
   delay(INTERVAL);
+}
+
+void postData(float temperature) {
+  // TODO: Post data
+  Serial.print("Posting temperature: ");
+  Serial.println(temperature);
 }
