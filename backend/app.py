@@ -14,6 +14,8 @@ def receive_sensor_data():
     if temperature == None or humidity == None:
         return jsonify({"error": "Incomplete request body"}), 400
     
+    print(temperature, humidity)
+    
     return jsonify({"message": "Received data"}), 200
 
 if __name__ == "__main__":
