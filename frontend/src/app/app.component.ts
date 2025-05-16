@@ -17,7 +17,7 @@ export class AppComponent {
   ngOnInit() {
     this.readMetrics();
 
-    setInterval(() => this.readMetrics(), 1000 * 60 * 5);
+    setInterval(() => this.readMetrics(), 1000 * 60);
   }
 
   readMetrics() {

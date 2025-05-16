@@ -1,4 +1,24 @@
+:root {
+  --background: white;
+  --foreground: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: black;
+    --foreground: white;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-family: system-ui, "Verdana", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
 }

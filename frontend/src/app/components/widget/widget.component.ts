@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { UpdateIndicatorComponent } from "../update-indicator/update-indicator.component";
 
 @Component({
   selector: 'app-widget',
-  imports: [],
+  imports: [UpdateIndicatorComponent],
   templateUrl: './widget.component.html',
   styleUrl: './widget.component.css',
 })

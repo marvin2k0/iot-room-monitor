@@ -1,0 +1,27 @@
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  opacity: 0.5;
+  position: relative;
+  animation: blink 1.5s infinite;
+}
+
+.circle::after {
+  content: "LIVE";
+  position: absolute;
+  top: 50%;
+  left: 175%;
+  transform: translateY(-50%);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 50%;
+  }
+}
