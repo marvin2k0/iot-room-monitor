@@ -1,0 +1,16 @@
+.widget {
+  background: linear-gradient(to bottom right, #151515 0%, #111111 100%);
+  color: rgb(235, 235, 235);
+  width: 15rem;
+  padding-inline: 1.5rem;
+  padding-block: 0.125rem;
+  border-radius: 1rem;
+}
+
+.widget h3 {
+  font-size: 1rem;
+}
+
+.widget p {
+  font-size: 2rem;
+}

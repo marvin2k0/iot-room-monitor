@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+.widget-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 80%;
+}
