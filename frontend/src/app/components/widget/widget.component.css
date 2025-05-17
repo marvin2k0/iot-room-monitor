@@ -2,6 +2,7 @@
   background: linear-gradient(to bottom right, #151515 0%, #111111 100%);
   color: rgb(235, 235, 235);
   width: 24em;
+  max-width: 80dvw;
   height: 11rem;
   padding: 2.25rem 2.25rem;
   border-radius: 1rem;
@@ -36,4 +37,17 @@ app-update-indicator {
 
 .widget p {
   font-size: 3.5rem;
+}
+
+.value-container {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }

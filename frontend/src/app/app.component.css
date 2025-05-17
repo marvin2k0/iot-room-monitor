@@ -10,7 +10,6 @@ h1 {
   flex-wrap: wrap;
   gap: 2.5rem;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  width: 80%;
+  justify-content: center;
+  width: 100dvw;
 }

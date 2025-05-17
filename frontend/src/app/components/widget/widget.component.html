@@ -3,5 +3,16 @@
     <h3>{{ identifier }}</h3>
     <app-update-indicator />
   </div>
-  <p>{{ value }}</p>
+  <div class="value-container">
+    <p>{{ value }}{{ unit }}</p>
+    <div
+      id="change"
+      [class]="{
+        red: this.value - this.compare < 0 && desired == 'higher' || this.value - this.compare > 0 && desired == 'lower',
+        green: this.value - this.compare >= 0 && desired == 'higher' || this.value - this.compare <= 0 && desired == 'lower',
+      }"
+    >
+      ({{ this.value - this.compare | number : "1.2-2" }}{{ unit }})
+    </div>
+  </div>
 </div>

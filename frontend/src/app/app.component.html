@@ -1,6 +1,18 @@
 <h1>Raumklima</h1>
 
 <div class="widget-container">
-  <app-widget identifier="Temperatur" [value]="this.temperature" />
-  <app-widget identifier="Luftfeuchtigkeit" [value]="this.humidity" />
+  <app-widget
+    identifier="Temperatur"
+    [value]="this.temperature"
+    [compare]="this.yesterdayTemperature"
+    desired="lower"
+    unit="°C"
+  />
+  <app-widget
+    identifier="Luftfeuchtigkeit"
+    [value]="this.humidity"
+    [compare]="this.yesterdayHumidity"
+    desired="higher"
+    unit="%"
+  />
 </div>

@@ -11,8 +11,11 @@ import { MetricsService } from './services/metrics.service';
 export class AppComponent {
   metricsService: MetricsService = inject(MetricsService);
 
-  temperature!: string;
-  humidity!: string;
+  temperature!: number;
+  humidity!: number;
+
+  yesterdayTemperature!: number;
+  yesterdayHumidity!: number;
 
   ngOnInit() {
     this.readMetrics();
@@ -22,8 +25,13 @@ export class AppComponent {
 
   readMetrics() {
     this.metricsService.getMetrics().subscribe((data) => {
-      this.temperature = `${data.temperature}°C`;
-      this.humidity = `${data.humidity}%`;
+      this.temperature = data.temperature;
+      this.humidity = data.humidity;
+    });
+
+    this.metricsService.getYesterdaysMetrics().subscribe((data) => {
+      this.yesterdayTemperature = data.temperature;
+      this.yesterdayHumidity = data.humidity;
     });
   }
 }

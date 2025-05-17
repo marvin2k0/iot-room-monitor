@@ -13,4 +13,8 @@ export class MetricsService {
   getMetrics() {
     return this.http.get<MetricsResponse>(`${this.baseUrl}/current`);
   }
+
+  getYesterdaysMetrics() {
+    return this.http.get<MetricsResponse>(`${this.baseUrl}/yesterday`);
+  }
 }
