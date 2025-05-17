@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { WidgetComponent } from './components/widget/widget.component';
 import { MetricsService } from './services/metrics.service';
+import { LightsService } from './services/lights.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { MetricsService } from './services/metrics.service';
 })
 export class AppComponent {
   metricsService: MetricsService = inject(MetricsService);
+  lightsService: LightsService = inject(LightsService);
 
   temperature!: number;
   humidity!: number;
@@ -18,8 +20,13 @@ export class AppComponent {
   yesterdayHumidity!: number;
 
   ngOnInit() {
-    this.readMetrics();
+    this.lightsService
+      .getLightState('nachttisch_lightbulb')
+      .subscribe((data) => {
+        console.log(data.state);
+      });
 
+    this.readMetrics();
     setInterval(() => this.readMetrics(), 1000 * 60);
   }
 
