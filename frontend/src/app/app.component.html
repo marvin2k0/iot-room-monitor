@@ -8,11 +8,18 @@
     desired="lower"
     unit="°C"
   />
+
   <app-widget
     identifier="Luftfeuchtigkeit"
     [value]="this.humidity"
     [compare]="this.yesterdayHumidity"
     desired="higher"
     unit="%"
+  />
+
+  <app-binary-widget identifier="Nachttisch" haName="nachttisch_lightbulb" />
+  <app-binary-widget
+    identifier="Schreibtisch"
+    haName="schreibstisch_lightbulb"
   />
 </div>
