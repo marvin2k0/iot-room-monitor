@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { WidgetComponent } from './components/widget/widget.component';
 import { MetricsService } from './services/metrics.service';
 import { LightsService } from './services/lights.service';
+import { BinaryWidgetComponent } from "./components/binary-widget/binary-widget.component";
 
 @Component({
   selector: 'app-root',
-  imports: [WidgetComponent],
+  imports: [WidgetComponent, BinaryWidgetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

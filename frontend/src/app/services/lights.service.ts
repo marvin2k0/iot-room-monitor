@@ -6,15 +6,9 @@ import { inject, Injectable } from '@angular/core';
 })
 export class LightsService {
   http: HttpClient = inject(HttpClient);
-  baseUrl: string = 'http://pi.home:8123/api/states/light.';
+  baseUrl: string = 'http://web.home:8080/lamps/';
 
   getLightState(deviceId: string) {
-    const headers = new HttpHeaders({
-      Authorization:
-        'Bearer x',
-    });
-    return this.http.get<{ state: 'on' | 'off' }>(this.baseUrl + deviceId, {
-      headers: headers,
-    });
+    return this.http.get<{ state: 'on' | 'off' }>(this.baseUrl + deviceId);
   }
 }
