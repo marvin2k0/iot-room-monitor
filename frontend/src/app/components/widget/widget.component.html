@@ -4,7 +4,7 @@
     <app-update-indicator />
   </div>
   <div class="value-container">
-    <p>{{ value }}{{ unit }}</p>
+    <p>{{ value | number : "1.2-2" }}{{ unit }}</p>
     <div
       id="change"
       [class]="{
